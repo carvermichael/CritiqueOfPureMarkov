@@ -14,14 +14,14 @@ def tweet(status_text):
 
 
 def main():
-    statusText = status_creator.create_sentence(3)
-    status_length = len(statusText)
-    if status_length <= 140:
-        tweet(statusText)
-        print('Tweeted: ', statusText)
+    status_text = status_creator.create_sentence(3)
+    status_length = len(status_text)
+    if 140 >= status_length > 20:
+        tweet(status_text)
+        print('Tweeted: ', status_text)
     else:
-        print('Status length({}) is too long to post.'.format(status_length))
-        print('Status: ', statusText)
+        print('Status of length({}) will not be posted.'.format(status_length))
+        print('Status: ', status_text)
 
 
 if __name__ == '__main__':
