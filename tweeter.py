@@ -1,5 +1,5 @@
 import properties
-import status_creator
+from status_cache_service import get_status
 import tweepy
 
 
@@ -14,15 +14,9 @@ def tweet(status_text):
 
 
 def main():
-    status_text = status_creator.create_sentence(3)
-    status_length = len(status_text)
-    if 140 >= status_length > 20:
-        tweet(status_text)
-        print('Tweeted: ', status_text)
-    else:
-        print('Status of length({}) will not be posted.'.format(status_length))
-        print('Status: ', status_text)
-
+    status_text = get_status()
+    tweet(status_text)
+    print('Tweeted: ', status_text)
 
 if __name__ == '__main__':
     main()
