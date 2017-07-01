@@ -1,12 +1,9 @@
 import chain_creator
 import random
-import json
-
-
 
 
 def create_status(number_leading_words):
-    chain = chain_creator.make_chain('CPR.txt')
+    chain = chain_creator.get_chain('CPR.txt')
     current_key = []
 
     for i in range(number_leading_words):  # number_leading_words implicated here
@@ -47,7 +44,3 @@ def main():
     blah = create_status(3)
     print(blah)
     print('len:', len(blah))
-
-
-if __name__ == '__main__':
-    refresh_status_cache()

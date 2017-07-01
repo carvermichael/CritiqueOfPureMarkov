@@ -4,6 +4,17 @@ import unittest
 BEGIN = '__BEGIN__'
 END = '__END__'
 number_leading_words = 3
+cached_chains = {}
+
+
+def get_chain(file_name):
+    if file_name in cached_chains.keys():
+        return cached_chains[file_name]
+
+    chain = make_chain(file_name)
+    cached_chains[file_name] = chain
+
+    return chain
 
 
 def make_chain(file_name):
