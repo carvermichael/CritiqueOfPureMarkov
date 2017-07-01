@@ -20,13 +20,11 @@ def get_cache():
 
 
 def put_cache(statuses):
-    print('putting statuses')
     json_load = {'statuses': statuses}
 
     with open('statuses.json', 'w') as file:
         json.dump(json_load, file)
 
-    print('finished putting statuses')
 
 def refresh_status_cache():
     print('refreshing status cache')
